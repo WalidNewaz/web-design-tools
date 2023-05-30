@@ -6,9 +6,10 @@ Here is a running list of tools:
 - Color scheme picker
 
 ## Build and execute
-To build the project run:
+To build and execute the project project locally, run:
+
 ```shell
-npm run build
+npm run develop
 ```
 
 Once built, the app should be available on port 8000 of your [localhost](http://localhost:8000/).
