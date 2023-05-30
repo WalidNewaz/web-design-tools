@@ -1,0 +1,157 @@
+/* CSS Custom Properties Definitions */
+
+:root {
+    --brand: #006400;
+    --brand: hsl(120 100% 19.608%);
+    --brand-hue: 120;
+    --brand-saturation: 100%;
+    --brand-lightness: 19.608%;
+    /* Brand */
+    --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+    /* Text color */
+    --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+    --text2-light: hsl(var(--brand-hue) 30% 30%);
+    /* Surface colors are the background, borders and other decorative surfaces that text sits upon. */
+    --surface1-light: hsl(var(--brand-hue) 25% 90%);
+    --surface2-light: hsl(var(--brand-hue) 20% 99%);
+    --surface3-light: hsl(var(--brand-hue) 20% 92%);
+    --surface4-light: hsl(var(--brand-hue) 20% 85%);
+    /* Shadows */
+    --surface-shadow-light: var(--brand-hue) 10% 20%;
+    --shadow-strength-light: .02;
+
+
+    --brand-dim: hsl(var(--brand-hue) calc(var(--brand-saturation) / 1.25) calc(var(--brand-lightness) / 1.25));
+    --text1-dim: hsl(var(--brand-hue) 15% 75%);
+    --text2-dim: hsl(var(--brand-hue) 10% 61%);
+    --surface1-dim: hsl(var(--brand-hue) 10% 20%);
+    --surface2-dim: hsl(var(--brand-hue) 10% 25%);
+    --surface3-dim: hsl(var(--brand-hue) 5% 30%);
+    --surface4-dim: hsl(var(--brand-hue) 5% 35%);
+    --surface-shadow-dim: var(--brand-hue) 30% 13%;
+    --shadow-strength-dim: .2;
+}
+
+.main-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 3ch;
+    padding: 0;
+}
+
+.main-menu li {
+    padding-block-end: 2em;
+
+}
+
+section.dark-theme, section.light-theme {
+    display: flex;
+    gap: 3ch;
+    padding: 2ch;
+}
+
+.brand .swatch {
+    background: var(--brand-dim)
+}
+
+.brand-light .swatch {
+    background: var(--brand)
+}
+
+.text1 .swatch {
+    background: var(--text1-dim)
+}
+
+.text1-light .swatch {
+    background: var(--text1-light)
+}
+
+.text2 .swatch {
+    background: var(--text2-dim)
+}
+
+.text2-light .swatch {
+    background: var(--text2-light)
+}
+
+.surface1 .swatch {
+    background: var(--surface1-dim)
+}
+
+.surface1-light .swatch {
+    background: var(--surface1-light)
+}
+
+.surface2 .swatch {
+    background: var(--surface2-dim)
+}
+
+.surface2-light .swatch {
+    background: var(--surface2-light)
+}
+
+.surface3 .swatch {
+    background: var(--surface3-dim)
+}
+
+.surface3-light .swatch {
+    background: var(--surface3-light)
+}
+
+.surface4 .swatch {
+    background: var(--surface4-dim)
+}
+
+.surface4-light .swatch {
+    background: var(--surface4-light)
+}
+
+.shadow .swatch {
+    background: hsl(var(--surface-shadow-dim) / var(--shadow-strength-dim))
+}
+
+.shadow-light .swatch {
+    background: hsl(var(--surface-shadow-light) / var(--shadow-strength-light))
+}
+
+figure {
+    display: flex;
+    gap: 1ch;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.swatch {
+    flex-shrink: 0;
+    inline-size: 3ch;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px hsl(0 0% 50% / 25%);
+}
+
+@media (max-width: 1500px) {
+    figcaption {
+        display: none;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    block-size: 100%;
+}
+
+body {
+    min-block-size: 100%;
+    font-family: system-ui, sans-serif;
+
+    display: flex;
+    place-content: center;
+    gap: 3ch;
+    padding: 5ch;
+}
