@@ -169,6 +169,19 @@ section.dark-theme, section.light-theme, section.dim-theme {
 }
 
 /** DIM THEME */
+[color-scheme="dim"] {
+    color-scheme: dark;
+
+    --brand: var(--brand-dim);
+    --text1: var(--text1-dim);
+    --text2: var(--text2-dim);
+    --surface1: var(--surface1-dim);
+    --surface2: var(--surface2-dim);
+    --surface3: var(--surface3-dim);
+    --surface4: var(--surface4-dim);
+    --surface-shadow: var(--surface-shadow-dim);
+    --shadow-strength: var(--shadow-strength-dim);
+}
 .dim-theme .brand .swatch {
     background: var(--brand-dim)
 }
