@@ -2,34 +2,57 @@
 
 :root {
     --brand: #006400;
-    --brand: hsl(120 100% 19.608%);
+    --brand-hsl: hsl(120 100% 19.608%);
     --brand-hue: 120;
     --brand-saturation: 100%;
     --brand-lightness: 19.608%;
-    /* Brand */
-    --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
-    /* Text color */
-    --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
-    --text2-light: hsl(var(--brand-hue) 30% 30%);
-    /* Surface colors are the background, borders and other decorative surfaces that text sits upon. */
-    --surface1-light: hsl(var(--brand-hue) 25% 90%);
-    --surface2-light: hsl(var(--brand-hue) 20% 99%);
-    --surface3-light: hsl(var(--brand-hue) 20% 92%);
-    --surface4-light: hsl(var(--brand-hue) 20% 85%);
-    /* Shadows */
-    --surface-shadow-light: var(--brand-hue) 10% 20%;
-    --shadow-strength-light: .02;
+
+    /** LIGHT MODE */
+        /* Brand */
+        --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+        /* Text color */
+        --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+        --text2-light: hsl(var(--brand-hue) 30% 30%);
+        /* Surface colors are the background, borders and other decorative surfaces that text sits upon. */
+        --surface1-light: hsl(var(--brand-hue) 25% 90%);
+        --surface2-light: hsl(var(--brand-hue) 20% 99%);
+        --surface3-light: hsl(var(--brand-hue) 20% 92%);
+        --surface4-light: hsl(var(--brand-hue) 20% 85%);
+        /* Shadows */
+        --surface-shadow-light: var(--brand-hue) 10% 20%;
+        --shadow-strength-light: .02;
 
 
-    --brand-dim: hsl(var(--brand-hue) calc(var(--brand-saturation) / 1.25) calc(var(--brand-lightness) / 1.25));
-    --text1-dim: hsl(var(--brand-hue) 15% 75%);
-    --text2-dim: hsl(var(--brand-hue) 10% 61%);
-    --surface1-dim: hsl(var(--brand-hue) 10% 20%);
-    --surface2-dim: hsl(var(--brand-hue) 10% 25%);
-    --surface3-dim: hsl(var(--brand-hue) 5% 30%);
-    --surface4-dim: hsl(var(--brand-hue) 5% 35%);
-    --surface-shadow-dim: var(--brand-hue) 30% 13%;
-    --shadow-strength-dim: .2;
+    /** DARK MODE */
+        /* Brand */
+        --brand-dark: hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5));
+        /* Text color */
+        --text1-dark: hsl(var(--brand-hue) 15% 85%);
+        --text2-dark: hsl(var(--brand-hue) 5% 65%);
+        /* Surface colors are the background, borders and other decorative surfaces that text sits upon. */
+        --surface1-dark: hsl(var(--brand-hue) 10% 10%);
+        --surface2-dark: hsl(var(--brand-hue) 10% 15%);
+        --surface3-dark: hsl(var(--brand-hue) 5% 20%);
+        --surface4-dark: hsl(var(--brand-hue) 5% 25%);
+        /* Shadows */
+        --surface-shadow-dark: var(--brand-hue) 50% 3%;
+        --shadow-strength-dark: .8;
+
+
+    /** DIM MODE */
+        /* Brand */
+        --brand-dim: hsl(var(--brand-hue) calc(var(--brand-saturation) / 1.25) calc(var(--brand-lightness) / 1.25));
+        /* Text color */
+        --text1-dim: hsl(var(--brand-hue) 15% 75%);
+        --text2-dim: hsl(var(--brand-hue) 10% 61%);
+        /* Surface colors are the background, borders and other decorative surfaces that text sits upon. */
+        --surface1-dim: hsl(var(--brand-hue) 10% 20%);
+        --surface2-dim: hsl(var(--brand-hue) 10% 25%);
+        --surface3-dim: hsl(var(--brand-hue) 5% 30%);
+        --surface4-dim: hsl(var(--brand-hue) 5% 35%);
+        /* Shadows */
+        --surface-shadow-dim: var(--brand-hue) 30% 13%;
+        --shadow-strength-dim: .2;
 }
 
 .main-menu {
@@ -45,74 +68,137 @@
 
 }
 
-section.dark-theme, section.light-theme {
+section.dark-theme, section.light-theme, section.dim-theme {
     display: flex;
     gap: 3ch;
     padding: 2ch;
 }
 
-.brand .swatch {
-    background: var(--brand-dim)
+/** LIGHT THEME */
+[color-scheme="light"] {
+    color-scheme: light;
+
+    --brand: var(--brand-light);
+    --text1: var(--text1-light);
+    --text2: var(--text2-light);
+    --surface1: var(--surface1-light);
+    --surface2: var(--surface2-light);
+    --surface3: var(--surface3-light);
+    --surface4: var(--surface4-light);
+    --surface-shadow: var(--surface-shadow-light);
+    --shadow-strength: var(--shadow-strength-light);
 }
 
-.brand-light .swatch {
-    background: var(--brand)
+.light-theme .brand .swatch {
+    background: var(--brand-hsl)
 }
 
-.text1 .swatch {
-    background: var(--text1-dim)
-}
-
-.text1-light .swatch {
+.light-theme .text1 .swatch {
     background: var(--text1-light)
 }
 
-.text2 .swatch {
-    background: var(--text2-dim)
-}
-
-.text2-light .swatch {
+.light-theme .text2 .swatch {
     background: var(--text2-light)
 }
 
-.surface1 .swatch {
-    background: var(--surface1-dim)
-}
-
-.surface1-light .swatch {
+.light-theme .surface1 .swatch {
     background: var(--surface1-light)
 }
 
-.surface2 .swatch {
-    background: var(--surface2-dim)
-}
-
-.surface2-light .swatch {
+.light-theme .surface2 .swatch {
     background: var(--surface2-light)
 }
 
-.surface3 .swatch {
-    background: var(--surface3-dim)
-}
-
-.surface3-light .swatch {
+.light-theme .surface3 .swatch {
     background: var(--surface3-light)
 }
 
-.surface4 .swatch {
-    background: var(--surface4-dim)
-}
-
-.surface4-light .swatch {
+.light-theme .surface4 .swatch {
     background: var(--surface4-light)
 }
 
-.shadow .swatch {
-    background: hsl(var(--surface-shadow-dim) / var(--shadow-strength-dim))
+.light-theme .shadow .swatch {
+    background: hsl(var(--surface-shadow-light) / var(--shadow-strength-light))
 }
 
-.shadow-light .swatch {
-    background: hsl(var(--surface-shadow-light) / var(--shadow-strength-light))
+/** DARK THEME */
+[color-scheme="dark"] {
+    color-scheme: dark;
+
+    --brand: var(--brand-dark);
+    --text1: var(--text1-dark);
+    --text2: var(--text2-dark);
+    --surface1: var(--surface1-dark);
+    --surface2: var(--surface2-dark);
+    --surface3: var(--surface3-dark);
+    --surface4: var(--surface4-dark);
+    --surface-shadow: var(--surface-shadow-dark);
+    --shadow-strength: var(--shadow-strength-dark);
+}
+
+.dark-theme .brand .swatch {
+    background: var(--brand-dark)
+}
+
+.dark-theme .text1 .swatch {
+    background: var(--text1-dark)
+}
+
+.dark-theme .text2 .swatch {
+    background: var(--text2-dark)
+}
+
+.dark-theme .surface1 .swatch {
+    background: var(--surface1-dark)
+}
+
+.dark-theme .surface2 .swatch {
+    background: var(--surface2-dark)
+}
+
+.dark-theme .surface3 .swatch {
+    background: var(--surface3-dark)
+}
+
+.dark-theme .surface4 .swatch {
+    background: var(--surface4-dark)
+}
+
+.dark-theme .shadow .swatch {
+    background: hsl(var(--surface-shadow-dark) / var(--shadow-strength-dark))
+}
+
+/** DIM THEME */
+.dim-theme .brand .swatch {
+    background: var(--brand-dim)
+}
+
+.dim-theme .text1 .swatch {
+    background: var(--text1-dim)
+}
+
+.dim-theme .text2 .swatch {
+    background: var(--text2-dim)
+}
+
+.dim-theme .surface1 .swatch {
+    background: var(--surface1-dim)
+}
+
+.dim-theme .surface2 .swatch {
+    background: var(--surface2-dim)
+}
+
+.dim-theme .surface3 .swatch {
+    background: var(--surface3-dim)
+}
+
+.dim-theme .surface4 .swatch {
+    background: var(--surface4-dim)
+}
+
+.dim-theme .shadow .swatch {
+    background: hsl(var(--surface-shadow-dim) / var(--shadow-strength-dim))
 }
 
 figure {
